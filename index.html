@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Nganya | The Movement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nganya-orange: #FF4500;
+            --nganya-cyan: #00E5FF;
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .font-header { font-family: 'Archivo Black', sans-serif; }
+        
+        /* THE EXACT STICKER STYLE */
+        .sticker {
+            display: inline-block;
+            padding: 0.25em 0.6em;
+            text-transform: uppercase;
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.4);
+            line-height: 1;
+        }
+        .sticker-orange { background-color: var(--nganya-orange); color: white; }
+        .sticker-white { background-color: white; color: black; }
+        
+        .sticker-main { font-size: clamp(2rem, 9vw, 5.5rem); }
+        .tilt-left { transform: rotate(-3deg); }
+        .tilt-right { transform: rotate(2.5deg); margin-top: -8px; }
 
+        /* Animation: Fade in on Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(255, 69, 0, 0.6);
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        /* Hover effect for the phone mockups */
+        .phone-hover {
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .phone-hover:hover {
+            transform: scale(1.03) rotate(0deg) !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="min-h-screen flex flex-col items-center justify-center relative px-6 text-center overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#FF4500] opacity-10 blur-[130px] rounded-full"></div>
+
+        <div class="relative z-10 flex flex-col items-center">
+            <div class="reveal active">
+                <div class="sticker sticker-orange sticker-main tilt-left font-header mb-2">FIND YOUR</div><br>
+                <div class="sticker sticker-white sticker-main tilt-right font-header mb-2">FAVOURITE</div><br>
+                <div class="sticker sticker-orange sticker-main tilt-left font-header">NGANYA</div>
+            </div>
+            
+            <p class="mt-12 text-zinc-400 text-lg md:text-2xl max-w-xl font-medium reveal active">
+                See Your Favorite Nganya Live on the Map. <br>
+                <span class="text-white">No Stress. No Guessing.</span>
+            </p>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_AO3l3p4BWrXsk5W_qmyVx2Pzoqa37Sebo6lGAPWIiSjwpw/viewform?usp=header" 
+               target="_blank"
+               class="mt-12 btn-glow bg-[#FF4500] text-white font-black px-12 py-6 rounded-full text-xl transition-all uppercase tracking-widest reveal active">
+                Hop In The Movement
+            </a>
+        </div>
+    </header>
+
+    <section class="max-w-7xl mx-auto px-6 py-20 space-y-40">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="relative group reveal">
+                <div class="phone-hover bg-zinc-900 rounded-[3rem] p-4 shadow-2xl relative z-20 transition-transform -rotate-2">
+                    <img src="images/image 3.jpeg" alt="App History" class="rounded-[2.5rem] w-full">
+                </div>
+                <div class="absolute -top-6 -left-6 w-full h-full border-2 border-dashed border-zinc-800 rounded-[3rem] -z-10"></div>
+            </div>
+            <div class="md:pl-10 reveal">
+                <span class="text-[#00E5FF] font-bold tracking-widest uppercase text-sm">01 — THE ROOT</span>
+                <h2 class="text-5xl font-black mt-4 mb-6 font-header leading-tight">IT STARTED <br><span class="text-[#FF4500]">WITH A BEAT.</span></h2>
+                <p class="text-zinc-400 text-xl leading-relaxed">
+                    Nairobi culture wasn't built in a day. We took the rhythm of the Manyanga and built the technology to track it.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div class="md:order-2 relative group reveal">
+                <div class="phone-hover bg-zinc-900 rounded-[3rem] p-4 shadow-2xl relative z-20 transition-transform rotate-2">
+                    <img src="images/image 1.jpeg" alt="App UI" class="rounded-[2.5rem] w-full">
+                </div>
+                <div class="absolute -bottom-6 -right-6 w-full h-full border-2 border-dashed border-[#00E5FF]/20 rounded-[3rem] -z-10"></div>
+            </div>
+            <div class="md:order-1 md:pr-10 reveal text-right md:text-left">
+                <span class="text-[#FF4500] font-bold tracking-widest uppercase text-sm">02 — THE RISE</span>
+                <h2 class="text-5xl font-black mt-4 mb-6 font-header uppercase leading-tight">Now. It's a <br><span class="text-[#00E5FF]">Movement.</span></h2>
+                <p class="text-zinc-400 text-xl leading-relaxed">
+                    Real-time GPS. Live vibe checks. Direct connection. The bridge between the heritage and the hustle is finally here.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto px-6 py-32 text-center reveal">
+        <div class="glass p-10 md:p-16 rounded-[4rem] relative overflow-hidden">
+            <h2 class="text-5xl md:text-7xl font-black mb-8 font-header uppercase leading-none">Welcome <br> Home.</h2>
+            <p class="text-zinc-400 mb-12 text-xl max-w-md mx-auto">The streets are in your hands. Click below to join the official waiting list.</p>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSd_AO3l3p4BWrXsk5W_qmyVx2Pzoqa37Sebo6lGAPWIiSjwpw/viewform?usp=header" 
+               target="_blank"
+               class="inline-block bg-white text-black font-black px-14 py-6 rounded-2xl text-xl hover:bg-[#00E5FF] transition-all uppercase tracking-tighter shadow-xl">
+                Enter The Culture
+            </a>
+        </div>
+    </section>
+
+    <footer class="py-16 border-t border-zinc-900 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="text-center md:text-left">
+                <p class="font-header text-2xl tracking-tighter text-[#FF4500]">FIND MY NGANYA</p>
+               
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-8 md:gap-12 font-black text-zinc-500 text-sm tracking-widest">
+                
+                <a href="#" class="hover:text-[#00E5FF] transition-colors">INSTAGRAM</a>
+                <a href="#" class="hover:text-[#FF4500] transition-colors">TIKTOK</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Intersection Observer for the Scroll Reveal effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
